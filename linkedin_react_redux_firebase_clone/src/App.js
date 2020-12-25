@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Feed from './Components/Feed/Feed';
 import Header from './Components/Header/Header';
 import SideBar from './Components/SideBar/SideBar';
 
@@ -13,6 +14,7 @@ function App() {
           <div className="app__body">
             <SideBar name="Ankush Kumar" email="ankush-kumar@outlook.com" stat__Number="3456" stat__Post="6798"/>
             {/* Sidebar */}
+            <Feed />
             {/* Feed */}
             {/* Widgets */}
           </div>
