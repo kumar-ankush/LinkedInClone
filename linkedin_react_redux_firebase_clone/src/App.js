@@ -6,6 +6,7 @@ import { auth } from './Components/Firebase/Firebase';
 import Header from './Components/Header/Header';
 import Login from './Components/Login/Login';
 import SideBar from './Components/SideBar/SideBar';
+import Widgets from './Components/Widgets/Widgets';
 import { login, logout, selectUser } from './features/userSlice/userSlice';
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <Feed />
         {/* Feed */}
         {/* Widgets */}
+        <Widgets />
       </div>
       )
       }

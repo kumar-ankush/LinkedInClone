@@ -59,7 +59,8 @@ const Feed = () => {
             </div>
 
             {/* Posts */}
-            <FlipMove>
+            {/* This flipmove thing is used for animation man */}
+            <FlipMove> 
             {posts.map(({id, data: { name,description,message,photoURL}})=>(
             <Post 
                 key={id}
