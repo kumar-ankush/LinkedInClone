@@ -7,7 +7,16 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import BusinessCenterIcon from '@material-ui/icons/BusinessCenter';
 import ChatIcon from '@material-ui/icons/Chat';
 import NotificationsIcon from '@material-ui/icons/Notifications';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout, selectUser } from '../../features/userSlice/userSlice';
+import { auth } from '../Firebase/Firebase';
 const Header = () => {
+    
+    const dispatch= useDispatch();
+    const logoutOfApp=()=>{
+            dispatch(logout()) //If click on me image icon it will log you out
+            auth.signOut();
+    }
     return (
         <div className='header'>
         
@@ -39,7 +48,7 @@ const Header = () => {
             0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=" />
                 <div className='header__search'>
                     <SearchIcon />
-                    <input type="text" />
+                    <input placeholder="Search" type="text" />
                 </div>   
                                   
             </div>
@@ -49,8 +58,8 @@ const Header = () => {
                 <HeaderOptions  Icon={BusinessCenterIcon} title="Jobs"/>
                 <HeaderOptions  Icon={ChatIcon} title="Messaging"/>
                 <HeaderOptions  Icon={NotificationsIcon} title="Notification"/>
-                <HeaderOptions title="me" avatar="https://media-exp1.licdn.com/dms/image/C5103AQHpIMsFGrIKzA/
-profile-displayphoto-shrink_100_100/0/1554828891718?e=1614211200&v=beta&t=k03vB15hyEvxSa3nUX483r6HiM1QXP_opUU0RWvH4sE"  />
+                <HeaderOptions title="me"  avatar={true} 
+                onClick={logoutOfApp}/>
             </div>
 
   
